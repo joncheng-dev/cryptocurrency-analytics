@@ -1,6 +1,6 @@
-# (Application Name)
+# Cryptocurrency Analytics
 
-#### (Brief Description of Application)
+#### User can enter ids to search for information on cryptocurrency.
 
 #### By Jonathan Cheng
 
@@ -10,8 +10,13 @@
 - CSS
 - JavaScript
 - JQuery
+- webpack
+- Node.js
+- API
 
 ## Description
+
+- Enter a valid cryptocurrency id (ex: btc, eth) and hit Search. You'll get some information about each of the currencies.
 
 ## Setup/Installation Requirements
 
@@ -20,11 +25,10 @@
 
 ## Known Bugs
 
-- _Any known issues_
-- _should go here_
+- _If you enter an invalid code, the Search button will return a blank._
 
 ## License
 
-Copyright (c) YEAR Jonathan Cheng
+Copyright (c) 2022 Jonathan Cheng
 
 ## Contact Information
