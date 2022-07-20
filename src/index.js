@@ -7,7 +7,7 @@ import apiService from "./api-service.js";
 // User Interface Logic
 $(document).ready(function () {
   $("#search").click(function () {
-    const ids = $("#searchIds").val();
+    const ids = $("#searchIds").val().toUpperCase();
     clearFields();
     apiCall(ids);
   });
@@ -25,29 +25,24 @@ async function apiCall(ids) {
 
 function getElements(response) {
   if (response) {
-    console.log("Response received.");
-    console.log("Response is: " + response);
-    console.log("Response array length is: " + response.length);
     for (let i = 0; i < response.length; i++) {
-      console.log("Cycling through response array position: " + i);
-    }
-    for (let i = 0; i < response.length; i++) {
-      console.log(`Response array position: ${i}`);
       // Show to user in html
-      let logo = `<a href="${response[0].logo_url}">
-      <img src="${response[0].logo_url}" alt="logo"></a>`;
-      // let logo = `<a href="${response[i].logo_url}"><img src="${response[i].logo_url}" alt="${response[i].name} logo"></a>`;
+      let logo = `<img src="${response[i].logo_url}" alt="${response[i].name}logo">`;
+
       // let results = "";
       $(".showResults").append(`
         <div class="row">
           <div class="col-md-3">
-            <p>Symbol here</p>
+            <p>Name: ${response[i].name}</p>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 logo-align">
             ${logo}
           </div>
           <div class="col-md-6">
-            <p>List of other descriptions</p>
+            <ul>
+              <li>Symbol: ${response[i].symbol}</li>
+              <li>Rank: ${response[i].rank}</li>
+            </ul>  
           </div>
         </div>
       `);
